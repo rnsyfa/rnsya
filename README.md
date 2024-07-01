@@ -13,7 +13,7 @@ Technology Used: HTML5 CSS3 jQuery  GNU/Linux Digital Ocean as VPS GIMP
 cd Birthday
 ```
 
-&& 
+&& Runs on Python2 version
 
 ```
 python -m SimpleHTTPServer --port  8081
