@@ -12,8 +12,6 @@ $('document').ready(function(){
 			$('#b33').animate({top:240, left: vw-150},500);
 			$('#b44').animate({top:240, left: vw-50},500);
 			$('#b55').animate({top:240, left: vw+50},500);
-			$('#b66').animate({top:240, left: vw+150},500);
-			$('#b77').animate({top:240, left: vw+250},500);
 		});
 
 	$('#turn_on').click(function(){
@@ -155,8 +153,6 @@ $('document').ready(function(){
 		$('#b33').animate({top:240, left: vw-150},500);
 		$('#b44').animate({top:240, left: vw-50},500);
 		$('#b55').animate({top:240, left: vw+50},500);
-		$('#b66').animate({top:240, left: vw+150},500);
-		$('#b77').animate({top:240, left: vw+250},500);
 		$('.balloons').css('opacity','0.9');
 		$('.balloons h2').fadeIn(3000);
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
