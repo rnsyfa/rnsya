@@ -2,197 +2,335 @@
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
-<!--[if gt IE 8]> <html> <![endif]-->
-<!--[if !IE]><!--><html lang="en"><!-- <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-	<title>Happy Birthday</title>
-	<meta charset="UTF-8" />
-	<meta name="description" content="Happy Birthday Xola">
-	<meta name="robots" content="index, follow" />
-	<link rel="author" href="https://plus.google.com/u/1/+AyushSharma1/" /> 
+    <title>Happy Birthday</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Happy Birthday Jannuu">
+    <meta name="robots" content="index, follow" />
+    <link rel="author" href="https://www.linkedin.com/in/hari-prasath-p-9bab91299/" /> 
     <meta name="keywords" content="Birthday, Happy">
-    <!-- Strat of Facebook Meta -->
+    <!-- Start of Facebook Meta -->
     <meta property="og:type" content="E-Greeting" />
     <meta property="og:image" content="favicon.ico" />
     <meta property="og:description" content="Wish you a very Happy Birthday">
     <!-- End of Facebook Meta Tags -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="loading.css">
-	<link href='http://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
-	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'> -->
-	<link rel="stylesheet/less" href="cake.less">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="loading.css">
+    <link href='http://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet/less" href="cake.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
+    <style>
+        /* Hidden Elements */
+        .hidden {
+            display: none;
+        }
+
+        /* Fade-in Animation */
+        .fade-in {
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Balloon and Confetti Animation */
+        .balloon {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 50px;
+            height: 70px;
+            background-color: red;
+            border-radius: 50%;
+            animation: floatUp 4s infinite ease-in-out;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-120%);
+            }
+        }
+
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: orange;
+            animation: fall 4s infinite ease-in-out;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        /* Button Styles */
+        .reveal-btn, .surprise-btn, .payment-btn {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background: linear-gradient(90deg, #ff4081, #ff6600);
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .reveal-btn:hover, .surprise-btn:hover, .payment-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Surprise Content */
+        #surpriseContent {
+            background: #fff8dc;
+            border: 2px solid #ffb300;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #surpriseContent ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #surpriseContent ul li {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #444;
+        }
+
+        #qrCode img {
+            margin-top: 10px;
+            width: 150px;
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>
-	<div class="loading"></div>
-	<audio class="song" controls loop>
+    <div class="loading"></div>
+    <audio class="song" controls loop>
         <source src="hbd.mp3"></source>
-	   Your browser isn't invited for super fun audio time.
+        Your browser isn't invited for super fun audio time.
     </audio>
     <div class="balloons text-center" id="b1">
-    	<h2 style="color:#F2B300;">H</h2>
+        <h2 style="color:#F2B300;">❤️</h2>
     </div>
     <div class="balloons text-center" id="b2">
-    	<h2 style="color:#0719D4;">B</h2>
+        <h2 style="color:#0719D4;">J</h2>
     </div>
-	<div class="balloons text-center" id="b3">
-    	<h2 style="color:#D14D39;">D</h2>
+    <div class="balloons text-center" id="b3">
+        <h2 style="color:#D14D39;">A</h2>
     </div>
-	<div class="balloons text-center" id="b4">
-    	<h2 style="color:#8FAD00;">X</h2>
+    <div class="balloons text-center" id="b4">
+        <h2 style="color:#8FAD00;">N</h2>
     </div>
-	<div class="balloons text-center" id="b5">
-    	<h2 style="color:#8377E4;">O</h2>
+    <div class="balloons text-center" id="b5">
+        <h2 style="color:#8377E4;">U</h2>
     </div>
     <div class="balloons text-center" id="b6">
-    	<h2 style="color:#99C96A;">L</h2>
-    </div>
-    <div class="balloons text-center" id="b7">
-    	<h2 style="color:#20CFB4;">A</h2>
+        <h2 style="color:#F2B300;">U</h2>
     </div>
 
     <img src="Balloon-Border.png" width="100%" class="balloon-border">
- 
 
-	<div class="container">
-		
-		<div class="row">
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_yellow"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_red"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_blue"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_green"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_pink"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_orange"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<img src="banner.png" class="bannar">
-			</div>
-		</div>
-		<div class="row cake-cover">
-			<div class="col-md-12 texr-center">
-				<div class="cake">
-				  <div class="velas">
-				    <div class="fuego"></div>
-				    <div class="fuego"></div>
-				    <div class="fuego"></div>
-				    <div class="fuego"></div>
-				    <div class="fuego"></div>
-				  </div>
-				  <div class="cobertura"></div>
-				  <div class="bizcocho"></div>
-				</div>
-			</div>
-		</div>
-		<div class="row message">
-			<div class="col-md-12">
-				<p>Today is...</p>
-				<p>as beautiful as other days</p>
-				<p>but you realize</p>
-				<p>another year has gone</p>
-				<p>in a blink of the eyes</p>
-				<p><strong>however</strong></p>
-				<p>Do you know..?</p>
-				<p>today is just special</p>
-				<p>so special to you</p>
-				<p>that's why</p>
-				<p>Let's make it...</p>
-				<p>the best celebration ever</p>
-				<p>and let me share...</p>
-				<p>a piece of happiness to you</p>
-				<p>I made all this...</p>
-				<p>as a birthday present to you</p>
-				<p>thanks for being there</p>
-				<p>thanks for the friendship we made</p>
-				<p>thanks for everything</p>
-				<p>I wish you all the best</p>
-				<p>May your life be at ease</p>
-				<p>May all your wishes come true</p>
-				<p>Remember</p>
-				<p>your ambitions</p>
-				<p>you live as a free bird...</p>
-				<p>flying in the blue sky</p>
-				<p>Now things are different...</p>
-				<p>real story of your life</p>
-				<p>is just about to begin</p>
-				<p>indeed..</p>
-				<p>but...</p>
-				<p>don't worry</p>
-				<p>because...</p>
-				<p>God has your back</p>
-				<p>and</p>
-				<p>this year will be better</p>
-				<p>and I hope</p>
-				<p>you'll find...</p>
-				<p>happiness along the way</p>
-				<p>keep your spirit up</p>
-				<p>enjoy every single moment...</p>
-				<p>that you experience today</p>
-				<p>fill it with your most beautiful smile</p>
-				<p>and make it the best memory..</p>
-				<p>lastly...</p>
-				<p>I'd like to wish you one more time</p>
-				<p>a very happy birthday Xola Mathembisa</p>
-			</div>
-		</div>
-		<div class="navbar navbar-fixed-bottom">
-			<div class="row">
-				<div class="col-md-6 text-center col-md-offset-3">
-					<button class="btn btn-primary" id="turn_on">Turn On Lights</button>
-					<button class="btn btn-primary" id="play">Play Music</button>
-					<button class="btn btn-primary" id="bannar_coming">Let's Decorate</button>
-					<button class="btn btn-primary" id="balloons_flying">Fly With Balloons</button>
-					<button class="btn btn-primary" id="cake_fadein">Most Delicious Cake Ever</button>
-					<button class="btn btn-primary" id="light_candle"> Light Candle</button>
-					<button class="btn btn-primary" id="wish_message">Happy Birthday</button>
-					<button class="btn btn-primary" id="story">A mesage for you</button>
-					<!-- <button class="btn btn-primary" id="cake_cut">Lrt's Cut the Cake</button> -->
-				</div>
-			</div>
-			<!-- <div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div> -->
-		</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-xs-2 bulb-holder">
+                <div class="bulb" id="bulb_yellow"></div>
+            </div>
+            <div class="col-md-2 col-xs-2 bulb-holder">
+                <div class="bulb" id="bulb_red"></div>
+            </div>
+            <div class="col-md-2 col-xs-2 bulb-holder">
+                <div class="bulb" id="bulb_blue"></div>
+            </div>
+            <div class="col-md-2 col-xs-2 bulb-holder">
+                <div class="bulb" id="bulb_green"></div>
+            </div>
+            <div class="col-md-2 col-xs-2 bulb-holder">
+                <div class="bulb" id="bulb_pink"></div>
+            </div>
+            <div class="col-md-2 col-xs-2 bulb-holder">
+                <div class="bulb" id="bulb_orange"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img src="banner.png" class="bannar">
+            </div>
+        </div>
+        <div class="row cake-cover">
+            <div class="col-md-12 text-center">
+                <div class="cake">
+                    <div class="velas">
+                        <div class="fuego"></div>
+                        <div class="fuego"></div>
+                        <div class="fuego"></div>
+                        <div class="fuego"></div>
+                        <div class="fuego"></div>
+                    </div>
+                    <div class="cobertura"></div>
+                    <div class="bizcocho"></div>
+                </div>
+            </div>
+        </div>
 
+        <div class="row message">
+            <div class="col-md-12 text-center">
+                <p>Today is...</p>
+<p>as beautiful as other days</p>
+<p>but do you realize?</p>
+<p>another year has gone...</p>
+<p>in the blink of an eye.</p>
+<p><strong>However...</strong></p>
+<p>Do you know...?</p>
+<p>today is not just special...</p>
+<p>it's <b>extra special for you!</b></p>
+<p>That's why...</p>
+<p>Let’s make it...</p>
+<p>the best celebration ever 🎉</p>
+<p>and share some happiness...</p>
+<p>a piece of joy made by me</p>
+<p>just for you!</p>
+<p>I made all this...</p>
+<p>as a birthday gift, from my heart ❤️</p>
+<p>Thanks for being there...</p>
+<p>thanks for the friendship we share...</p>
+<p>I truly wish you...</p>
+<p>all the happiness in the world.</p>
+<p>and may all your wishes come true.</p>
+<p>Remember your dreams...</p>
+<p>and ambitions...</p>
+<p>fly like a free bird</p>
+<p>aim for the sky!</p>
+<p>You’re never alone...</p>
+<p>because I’m just one <b>“Hello!”</b> away ✨</p>
+<p>Nuvu Hello Cheppalante..... </p>
+<p>you need my number right 🤔</p>
+<p>So, Save my number: <b>+91 7702991679</b></p>
+<p>No excuses! 😜</p>
+<p>and call me whenever you need me!</p>
+<p>And this year...</p>
+<p>will be way better for you!</p>
+<p>make beautiful memories...</p>
+<p>and fill your face with the brightest smile 😊</p>
+<p>Naaku telusu...</p>
+<p>this year will be...</p>
+<p>as magical and beautiful...</p>
+<p>for 🌸<b>you + your upcoming world</b>🐣</p>
+<p>I'm waiting for that....👀</p>
+<p>With lots of love,</p>
+<p><b>Nee Priyamaina Shenitudu</b></p>
+<p>Hari Prasath 💕</p>
+<p>Lastly...</p>
+<p>Wishing you one more time...</p>
+<p><b>A very happy birthday, Jannuuu! 🎉💖</b></p>
+            
+            </div>
+        </div>
+    </div>
 
-	</div>
+    <div class="navbar navbar-fixed-bottom">
+        <div class="row">
+            <div class="col-md-6 text-center col-md-offset-3">
+                <button class="btn btn-primary" id="turn_on" aria-label="Turn On Lights">Turn On Lights</button>
+                <button class="btn btn-primary" id="play" aria-label="Play Music">Play Music</button>
+                <button class="btn btn-primary" id="bannar_coming" aria-label="Let's Decorate">Let's Decorate</button>
+                <button class="btn btn-primary" id="balloons_flying" aria-label="Fly With Balloons">Fly With Balloons</button>
+                <button class="btn btn-primary" id="cake_fadein" aria-label="Most Delicious Cake Ever">Most Delicious Cake Ever</button>
+                <button class="btn btn-primary" id="light_candle" aria-label="Light Candle">Light Candle</button>
+                <button class="btn btn-primary" id="wish_message" aria-label="Happy Birthday">Happy Birthday</button>
+                <button class="btn btn-primary" id="story" aria-label="A message for you">A message for you</button>
+            </div>
+        </div>
+        <footer style="text-align: center; margin-top: 20px; font-size: 14px; color: #888;">
+            &copy; Hari Prasath 2024-2025. All Rights Reserved.
+        </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="effect.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Ensure the "Click to Reveal" button appears after the specified paragraph
+            const happyPara = document.getElementById('happyPara');
+            const revealButton = document.getElementById('reveal_button');
+            happyPara.insertAdjacentElement('afterend', revealButton);
+
+            // Reveal Button Click
+            revealButton.addEventListener('click', function () {
+                document.getElementById('hiddenContent').classList.remove('hidden');
+                this.style.display = 'none';
+            });
+
+            document.getElementById('surpriseButton').addEventListener('click', function () {
+                document.getElementById('surpriseContent').classList.remove('hidden');
+            });
+
+            // Balloon and confetti animations
+            for (let i = 0; i < 10; i++) {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+                balloon.style.left = Math.random() * 100 + 'vw';
+                balloon.style.backgroundColor = 'hsl(' + Math.random() * 360 + ', 100%, 70%)';
+                document.body.appendChild(balloon);
+
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = 'hsl(' + Math.random() * 360 + ', 100%, 70%)';
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    balloon.remove();
+                    confetti.remove();
+                }, 4000);
+            }
+
+            // Payment Button Click
+            document.getElementById('paymentButton').addEventListener('click', function () {
+                document.getElementById('qrCode').classList.remove('hidden');
+            });
+        });
+    </script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-58229732-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="effect.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-58229732-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 </html>
